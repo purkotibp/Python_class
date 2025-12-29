@@ -28,7 +28,7 @@
 Mltiplied_elements = (i * 2 for i  in tuple1)
 Result_tuple = tuple(Multiplied_elements)
 print(Result_tuple)
-method2
+#method2
 # # result_tuple=()
 # # for element in tuple1:
 # #     result_tuple+=(2,)
