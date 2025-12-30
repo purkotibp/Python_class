@@ -95,4 +95,46 @@
 # # Example usage
 # print(fibonacci(5))
 
+#------------high order functions-------__#
 
+# def logger(func):
+#     def wrapper(*args, **kwargs):
+#         print(f"Function {func.__name__} is called with arguments {args}and {kwargs}")
+#         result = func(*args,**kwargs)
+#         print(f"Function {func.__name__} returned {result}")
+#         return result
+#     return wrapper
+
+# @logger 
+# def divide(x,y):
+#     return x/y
+
+# print(divide(10,2))
+
+# def logger(func):
+#     def wrapper(*args, **kwargs):
+#         print(f"Arguments: {args} and {kwargs}")
+#         result = func(*args, **kwargs)
+#         print(f"Result: {result}")
+#         return result
+#     return wrapper
+
+# @logger
+# def reverse_string(s):
+#     return s[::-1]
+
+# print(reverse_string("Python", z=3))
+
+
+
+#---------task change in name of Function 
+def multiplier(factor):
+    def multiply_by_factor(number):
+        return number * factor 
+    return multiply_by_factor
+
+multiplier_value= multiplier(5)
+print(multiplier_value.__name__)
+print(type(multiplier_value))
+Result = multiplier_value(10)
+print(Result)
