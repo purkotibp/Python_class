@@ -41,7 +41,15 @@ print(Leap_year(year))
 # Constraint: Do not convert the number to a string. Use only mathematical operations.
 # Base Case: If the number is less than 10, the sum is simply the number itself.
  
+def sum_of_digits(n):
+    if n < 10:
+        return n
+    return (n % 10) + sum_of_digits(n // 10)
+num = int(input("Enter an integer: "))
+print("Sum of digits:", sum_of_digits(num))
 
 
 
 
+
+ 
