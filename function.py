@@ -242,3 +242,33 @@
 # numbers=[1,65,3,4,5,6,3.5,52,43]
 # max_number=reduce(max,numbers)
 # print(max_number)
+
+
+#-----------------Lamnda Function-----------#
+# what is lambda Fucntion 
+#simple lamda function to add 
+# # called as one line function 
+# # called as anonomys function ,it does not have have . 
+# lambda x, y: x + y
+# # assiging lambda function to varaiable 
+# add = lambda x, y: x + y 
+#        #lambda x,y is lambda      x+y return
+# # using lambda function 
+# result = add(5,3)
+# print(result) # output 8 
+
+
+# # task_1 
+# def square(num):
+#     return num **2 
+# number = [1 ,2,3,4,5]
+# squared_number = map(square, number)
+# print(list(squared_number))
+
+
+# using lambda function to find out square using map function
+# ap= lambda x : x ** 2
+# x = [1,2,3,4,5]
+# squared_number= map(ap,x)
+
+# print(list(squared_number))
