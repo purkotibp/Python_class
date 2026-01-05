@@ -2,36 +2,43 @@
 #with best and required attributes and methods
 #providing the services of deposit,withdraw, check balance
 class Bankaccount:
-    def __init__(self,name,account_number,balance):
+    def __init__(self,name,account_number,balance,):
         self.name=name
         self.account_number=account_number
         self.balance=balance
-
+        self.transaction={}
+        self.count=1
+        self.history={}
 
     def deposit(self,amount):
         self.balance +=amount
-        return self.balance
+        self.transaction[self.count]={'Type':'Deposit','Deposit_amount':amount,'Total_balance':self.balance}
+        self.count+=1
+        # self.history=history.append({'type':"deposit",'deposit':amount}) // mistake 
         
-    def fund_transfer(self,targeted_account,amount):
-        if self.balance>=amount:
-            self.balance -= amount
-            targeted_account.balance+=amount
-            return {self.balance}
-        else:
-            return print("insuffient balance")
+        return self.balance,self.history
+        
+        
+    # def fund_transfer(self,targeted_account,amount):
+    #     if self.balance>=amount:
+    #         self.balance -= amount
+    #         targeted_account.balance+=amount
+    #         return {self.balance}
+    #     else:
+    #         return print("insuffient balance")
         
 
         
 
-    def withdraw(self,amount):
-        if amount<=self.balance: 
-            self.balance -=amount
-            return self.balance
-        else:
-            return print("insufficent Balance")
+    # def withdraw(self,amount):
+    #     if amount<=self.balance: 
+    #         self.balance -=amount
+    #         return self.balance
+    #     else:
+    #         return print("insufficent Balance")
         
-    def check_balance(self):
-        return self.balance
+    # def check_balance(self):
+    #     return self.balance
     
 
     
@@ -43,11 +50,9 @@ print(account1.deposit(6000))
 print(account1.withdraw(9000))
 print(account1.check_balance())
 
+print(account1.transaction)
 account1.fund_transfer(account2,500)
 account1.fund_transfer(account2,50000)
 print(account2.balance)
-#fund transfering
-#hints:- create two diffrent objects of the class bank account
-#create a method fund)_transfer which will take 
 
 

@@ -42,3 +42,8 @@ husky=Dog('swizy',25,'gray')
 print(husky.name)
 print(husky.sound())
 
+
+
+
+#Encapsulation
+
