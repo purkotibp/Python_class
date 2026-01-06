@@ -2,7 +2,7 @@
 #with best and required attributes and methods
 #providing the services of deposit,withdraw, check balance
 class Bankaccount:
-    def __init__(self,name,account_number,balance,):
+    def __init__(self,name,account_number,balance):
         self.name=name
         self.account_number=account_number
         self.balance=balance
