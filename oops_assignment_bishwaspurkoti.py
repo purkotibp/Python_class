@@ -10,23 +10,28 @@
 
 
 class Digital_wallet:
-    def __init__(self,owner_name,balance=0):
+    def __init__(self,owner_name):
         self.__owner_name=owner_name
-        self.__balance=float(balance)
+        self.__balance=0.0
         
-
     def deposit(self,amount):
         if amount>0:
             self.__balance+=amount
-            return self.__balance
         else:
-            return("insufficent balance")
-        
+            print("insufficent balance")
+    def  withdraw(self,amount):
+        if amount<=self.__balance:
+            self.__balance -=amount
+            return 
+        else:
+            print("INSUFFICENT FUNDS")        
+    def getBalance(self):
+        return self.__balance
 
-        
-
-
-
+wallet1=Digital_wallet('bishwas')
+wallet1.deposit(1000)
+print(wallet1.getBalance())
+print(wallet1.withdraw(100),wallet1.getBalance())
 # Task 3: The "Car Fuel System" (Validation Logic)
 # Goal: Practice using "Setters" to validate data before saving it to an object.
 # The Problem:Create a class called Car.
@@ -40,44 +45,56 @@ class Digital_wallet:
 # Otherwise, add the amount to the current fuel.
 # displayFuel(): Show the remaining percentage of fuel.
 
-class car:
-    def __init__(self,modelName):
-        self.__modelName = modelName
-        self.__fuelLevel = 50#default fuel level
 
-    def __setFuelLevel(self, value):
-        if value > 100:
-            self.__fuelLevel = 100
-        elif value < 0:
-            self.__fuelLevel = 0
+
+
+
+# Task 2: The "Smart Light Bulb" (State Management)
+# Goal: Understand how methods change the "internal state" of an object without the user touching variables directly.
+# The Problem:Create a class called SmartBulb.
+# Private Attributes: brightness (Integer) and isOn (Boolean).
+# The Logic:
+# Constructor: The bulb should start "Off" (false) and brightness at 0.
+# turnOn(): Sets isOn to true and sets brightness to 100.
+# turnOff(): Sets isOn to false and sets brightness to 0.
+# dim(value): * If the bulb is Off, print: "Cannot dim a bulb that is off!"
+# If the bulb is On, decrease the brightness by the value, but don't let it go below 0.
+# getStatus(): Print whether the bulb is on/off and its current brightness level.
+
+class SmartBulb:
+    def __init__(self):
+        self.__isOn = False       
+        self.__brightness = 0
+
+    def turnOn(self):
+        self.__isOn = True
+        self.__brightness = 100
+
+    def turnOff(self):
+        self.__isOn = False
+        self.__brightness = 0
+
+    def dim(self, value):
+        if not self.__isOn:
+            print("Cannot dim, bulb is off!")
         else:
-            self.__fuelLevel = value
+            self.__brightness -= value
+            if self.__brightness < 0:
+                self.__brightness = 0
 
-    def drive(self):
-        if self.__fuelLevel==0:
-            print("Out of fuel! cannot drive")
-        else:
-            self.__setFuelLevel(self.__fuelLevel - 10)
-            
-    def refuel(self,amount):
-        if self.__fuelLevel<100:
-            self.__fuelLevel +=amount
-        else:
-           print("Tank is overflowing! Setting fuel to 100%.")
-        
-    def displayFuel(self):
-        print(self.__fuelLevel)
-    
+    def getStatus(self):
+        state = "ON" if self.__isOn else "OFF"
+        print(f"Bulb is {state}, Brightness: {self.__brightness}")
 
-car1= car('suzuki')
-car1.displayFuel()
-car1.refuel(50)
-car1.displayFuel()
-car1.drive()
-car1.displayFuel()
-
-
-
+bulb = SmartBulb()
+bulb = SmartBulb()
+bulb.turnOn()
+bulb.getStatus() 
+bulb.dim(30)
+bulb.getStatus()    
+bulb.turnOff()
+bulb.dim(10)          
+bulb.getStatus() 
 #------ uses encapsulation to hide the internal mehtod   ------
 
 #create celesius ,fahreheit and kevin 

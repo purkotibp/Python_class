@@ -46,4 +46,12 @@ print(husky.sound())
 
 
 #Encapsulation
+#.__self.balance
 
+
+#------ Inheritance-----#
+
+
+#inheritance is the mechanism in oop that allows a new class form the super class.
+# method , attibutes, fetching from the super class . 
+                                                                                                                         
