@@ -1,4 +1,4 @@
-
+#inheritance---
 #------------ Method Resolution Order--------------#
 
 # class AA:
