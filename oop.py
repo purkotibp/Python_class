@@ -108,3 +108,4 @@ class Internship(Employee, FunctionalDesignation, Department):
     def __repr__(self):
         return f"Intern: {self.name} ({self.dept_name} - {self.designation})"
 
+# -------------------method resolution order (MRO)------------#
