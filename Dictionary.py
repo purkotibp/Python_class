@@ -78,25 +78,3 @@
 # print(dict_3)
 
 
-
-
-
-
-# Advance concept of Dictionary
-# easy to serialize and deseralize 
-# json= java script oject notation
-# python native datatype is dicationary 
-# create a dictionary about the emolpyee data in nested form 
-
-
-employee={
-        'name':'bishwas',
-        'name':22,
-}
-# get hash of first key in dicitionary 
-
-print(hash('name'))
-print(hash('name'))
-
-employee['name']='shirshir'
-print(employee).get('name')
